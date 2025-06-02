@@ -67,22 +67,28 @@ export class UserService {
     if (users.length === 0) {
       const sampleUsers: CreateUserData[] = [
         {
-          name: 'John Doe',
-          email: 'john.doe@example.com',
+          name: 'Juan Pérez',
+          email: 'juan.perez@ejemplo.com',
           phone: '+1-555-0123',
-          department: 'Engineering'
+          department: 'Ingeniería'
         },
         {
-          name: 'Jane Smith',
-          email: 'jane.smith@example.com',
+          name: 'María García',
+          email: 'maria.garcia@ejemplo.com',
           phone: '+1-555-0124',
           department: 'Marketing'
         },
         {
-          name: 'Mike Johnson',
-          email: 'mike.johnson@example.com',
+          name: 'Carlos López',
+          email: 'carlos.lopez@ejemplo.com',
           phone: '+1-555-0125',
-          department: 'Sales'
+          department: 'Ventas'
+        },
+        {
+          name: 'Ana Rodríguez',
+          email: 'ana.rodriguez@ejemplo.com',
+          phone: '+1-555-0126',
+          department: 'Recursos Humanos'
         }
       ];
 

@@ -9,7 +9,7 @@ interface UserListProps {
 
 const UserList: React.FC<UserListProps> = ({ users, onEdit, onDelete }) => {
   const handleDelete = (user: User) => {
-    if (window.confirm(`Are you sure you want to delete ${user.name}?`)) {
+    if (window.confirm(`¿Estás seguro de que quieres eliminar a ${user.name}?`)) {
       onDelete(user.id);
     }
   };
@@ -18,7 +18,7 @@ const UserList: React.FC<UserListProps> = ({ users, onEdit, onDelete }) => {
     return (
       <div className="card">
         <div className="card-body text-center">
-          <p className="text-muted mb-0">No users found. Add your first user!</p>
+          <p className="text-muted mb-0">No se encontraron usuarios. ¡Agrega tu primer usuario!</p>
         </div>
       </div>
     );
@@ -27,7 +27,7 @@ const UserList: React.FC<UserListProps> = ({ users, onEdit, onDelete }) => {
   return (
     <div className="card">
       <div className="card-header">
-        <h5 className="mb-0">Users ({users.length})</h5>
+        <h5 className="mb-0">Usuarios ({users.length})</h5>
       </div>
       <div className="card-body p-0">
         <div className="table-responsive">
@@ -35,11 +35,11 @@ const UserList: React.FC<UserListProps> = ({ users, onEdit, onDelete }) => {
             <thead className="table-light">
               <tr>
                 <th>ID</th>
-                <th>Name</th>
+                <th>Nombre</th>
                 <th>Email</th>
-                <th>Phone</th>
-                <th>Department</th>
-                <th>Actions</th>
+                <th>Teléfono</th>
+                <th>Departamento</th>
+                <th>Acciones</th>
               </tr>
             </thead>
             <tbody>
@@ -68,19 +68,19 @@ const UserList: React.FC<UserListProps> = ({ users, onEdit, onDelete }) => {
                         type="button"
                         className="btn btn-sm btn-outline-primary"
                         onClick={() => onEdit(user)}
-                        title="Edit user"
+                        title="Editar usuario"
                       >
                         <i className="bi bi-pencil"></i>
-                        Edit
+                        Editar
                       </button>
                       <button
                         type="button"
                         className="btn btn-sm btn-outline-danger"
                         onClick={() => handleDelete(user)}
-                        title="Delete user"
+                        title="Eliminar usuario"
                       >
                         <i className="bi bi-trash"></i>
-                        Delete
+                        Eliminar
                       </button>
                     </div>
                   </td>

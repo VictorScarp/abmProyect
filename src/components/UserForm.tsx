@@ -32,21 +32,21 @@ const UserForm: React.FC<UserFormProps> = ({ user, onSubmit, onCancel }) => {
     const newErrors: Partial<CreateUserData> = {};
 
     if (!formData.name.trim()) {
-      newErrors.name = 'Name is required';
+      newErrors.name = 'El nombre es requerido';
     }
 
     if (!formData.email.trim()) {
-      newErrors.email = 'Email is required';
+      newErrors.email = 'El email es requerido';
     } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email)) {
-      newErrors.email = 'Invalid email format';
+      newErrors.email = 'Formato de email inválido';
     }
 
     if (!formData.phone.trim()) {
-      newErrors.phone = 'Phone is required';
+      newErrors.phone = 'El teléfono es requerido';
     }
 
     if (!formData.department.trim()) {
-      newErrors.department = 'Department is required';
+      newErrors.department = 'El departamento es requerido';
     }
 
     setErrors(newErrors);
@@ -76,7 +76,7 @@ const UserForm: React.FC<UserFormProps> = ({ user, onSubmit, onCancel }) => {
     }
   };
 
-  const departments = ['Engineering', 'Marketing', 'Sales', 'HR', 'Finance', 'Operations'];
+  const departments = ['Ingeniería', 'Marketing', 'Ventas', 'Recursos Humanos', 'Finanzas', 'Operaciones'];
 
   const handleBackdropClick = (e: React.MouseEvent) => {
     if (e.target === e.currentTarget) {
@@ -94,13 +94,13 @@ const UserForm: React.FC<UserFormProps> = ({ user, onSubmit, onCancel }) => {
       <div className="modal-dialog modal-lg">
         <div className="modal-content">
           <div className="modal-header">
-            <h5 className="modal-title">{user ? 'Edit User' : 'Add New User'}</h5>
-            <button type="button" className="btn-close" onClick={onCancel} aria-label="Close"></button>
+            <h5 className="modal-title">{user ? 'Editar Usuario' : 'Agregar Nuevo Usuario'}</h5>
+            <button type="button" className="btn-close" onClick={onCancel} aria-label="Cerrar"></button>
           </div>
           <div className="modal-body">
             <form onSubmit={handleSubmit}>
           <div className="mb-3">
-            <label htmlFor="name" className="form-label">Name</label>
+            <label htmlFor="name" className="form-label">Nombre</label>
             <input
               type="text"
               className={`form-control ${errors.name ? 'is-invalid' : ''}`}
@@ -108,7 +108,7 @@ const UserForm: React.FC<UserFormProps> = ({ user, onSubmit, onCancel }) => {
               name="name"
               value={formData.name}
               onChange={handleChange}
-              placeholder="Enter full name"
+              placeholder="Ingresa el nombre completo"
             />
             {errors.name && <div className="invalid-feedback">{errors.name}</div>}
           </div>
@@ -122,13 +122,13 @@ const UserForm: React.FC<UserFormProps> = ({ user, onSubmit, onCancel }) => {
               name="email"
               value={formData.email}
               onChange={handleChange}
-              placeholder="Enter email address"
+              placeholder="Ingresa el email"
             />
             {errors.email && <div className="invalid-feedback">{errors.email}</div>}
           </div>
 
           <div className="mb-3">
-            <label htmlFor="phone" className="form-label">Phone</label>
+            <label htmlFor="phone" className="form-label">Teléfono</label>
             <input
               type="tel"
               className={`form-control ${errors.phone ? 'is-invalid' : ''}`}
@@ -136,13 +136,13 @@ const UserForm: React.FC<UserFormProps> = ({ user, onSubmit, onCancel }) => {
               name="phone"
               value={formData.phone}
               onChange={handleChange}
-              placeholder="Enter phone number"
+              placeholder="Ingresa el número de teléfono"
             />
             {errors.phone && <div className="invalid-feedback">{errors.phone}</div>}
           </div>
 
           <div className="mb-3">
-            <label htmlFor="department" className="form-label">Department</label>
+            <label htmlFor="department" className="form-label">Departamento</label>
             <select
               className={`form-select ${errors.department ? 'is-invalid' : ''}`}
               id="department"
@@ -150,7 +150,7 @@ const UserForm: React.FC<UserFormProps> = ({ user, onSubmit, onCancel }) => {
               value={formData.department}
               onChange={handleChange}
             >
-              <option value="">Select a department</option>
+              <option value="">Selecciona un departamento</option>
               {departments.map(dept => (
                 <option key={dept} value={dept}>{dept}</option>
               ))}
@@ -161,10 +161,10 @@ const UserForm: React.FC<UserFormProps> = ({ user, onSubmit, onCancel }) => {
           </div>
           <div className="modal-footer">
             <button type="button" className="btn btn-secondary" onClick={onCancel}>
-              Cancel
+              Cancelar
             </button>
             <button type="submit" className="btn btn-primary" onClick={handleSubmit}>
-              {user ? 'Update User' : 'Create User'}
+              {user ? 'Actualizar Usuario' : 'Crear Usuario'}
             </button>
           </div>
         </div>

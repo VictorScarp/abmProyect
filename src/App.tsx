@@ -45,9 +45,9 @@ function App() {
       const newUser = UserService.createUser(userData);
       setUsers(UserService.getAllUsers());
       setShowForm(false);
-      showAlert('success', `User "${newUser.name}" created successfully!`);
+      showAlert('success', `Usuario "${newUser.name}" creado exitosamente!`);
     } catch {
-      showAlert('error', 'Failed to create user. Please try again.');
+      showAlert('error', 'Error al crear el usuario. Por favor intenta de nuevo.');
     }
   };
 
@@ -64,12 +64,12 @@ function App() {
         setUsers(UserService.getAllUsers());
         setEditingUser(null);
         setShowForm(false);
-        showAlert('success', `User "${updatedUser.name}" updated successfully!`);
+        showAlert('success', `Usuario "${updatedUser.name}" actualizado exitosamente!`);
       } else {
-        showAlert('error', 'User not found.');
+        showAlert('error', 'Usuario no encontrado.');
       }
     } catch {
-      showAlert('error', 'Failed to update user. Please try again.');
+      showAlert('error', 'Error al actualizar el usuario. Por favor intenta de nuevo.');
     }
   };
 
@@ -80,12 +80,12 @@ function App() {
       
       if (success) {
         setUsers(UserService.getAllUsers());
-        showAlert('success', `User "${user?.name}" deleted successfully!`);
+        showAlert('success', `Usuario "${user?.name}" eliminado exitosamente!`);
       } else {
-        showAlert('error', 'User not found.');
+        showAlert('error', 'Usuario no encontrado.');
       }
     } catch {
-      showAlert('error', 'Failed to delete user. Please try again.');
+      showAlert('error', 'Error al eliminar el usuario. Por favor intenta de nuevo.');
     }
   };
 
@@ -109,7 +109,7 @@ function App() {
       <div className="container-fluid py-4">
         <div className="text-center">
           <div className="spinner-border" role="status">
-            <span className="visually-hidden">Loading...</span>
+            <span className="visually-hidden">Cargando...</span>
           </div>
         </div>
       </div>
@@ -129,8 +129,8 @@ function App() {
           {/* Header */}
           <div className="d-flex justify-content-between align-items-center mb-4">
             <div className='mr-2'>
-              <h1 className="h2 mb-1">User Management System</h1>
-              <p className="text-muted mb-0">Create, Read, Update, and Delete users</p>
+              <h1 className="h2 mb-1">Sistema de Gestión de Usuarios</h1>
+              <p className="text-muted mb-0">Crear, Leer, Actualizar y Eliminar usuarios</p>
             </div>
             <button
               type="button"
@@ -138,7 +138,7 @@ function App() {
               onClick={handleAddNewUser}
             >
               <i className="bi bi-plus-circle me-2"></i>
-              Add New User
+              Agregar Nuevo Usuario
             </button>
           </div>
 
@@ -174,7 +174,7 @@ function App() {
                 <div className="card text-center">
                   <div className="card-body">
                     <h5 className="card-title text-primary">{users.length}</h5>
-                    <p className="card-text">Total Users</p>
+                    <p className="card-text">Total de Usuarios</p>
                   </div>
                 </div>
               </div>
@@ -184,7 +184,7 @@ function App() {
                     <h5 className="card-title text-success">
                       {new Set(users.map(u => u.department)).size}
                     </h5>
-                    <p className="card-text">Departments</p>
+                    <p className="card-text">Departamentos</p>
                   </div>
                 </div>
               </div>
